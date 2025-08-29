@@ -17,42 +17,51 @@ I built a comprehensive user management app with Node.js and MySQL, then deploye
 - **Auto port-forward script** - Seamless local development
 - **Health checks** - Automated deployment verification
 
-## Project Structure
+## 📁 Repository Structure
 
 ```
-06_project/
-├── app/                          # Application code (git submodule)
-│   ├── public/                   # Frontend files
-│   ├── server.js                 # Node.js backend with CRUD APIs
-│   ├── package.json              # Dependencies
-│   ├── Dockerfile                # Container setup
-│   └── .github/workflows/        # CI/CD pipeline
-├── scripts/                      # Deployment and management scripts
-│   ├── deploy-simple.sh          # Simple EC2+RDS deployment
-│   ├── deploy-full-eks.sh        # Full EKS deployment
-│   ├── destroy-all.sh            # Destroy all infrastructure
-│   ├── destroy-simple.sh         # Destroy simple setup
-│   ├── status.sh                 # Check resource status
-│   └── quick-demo.sh             # Quick demo script
-├── terraform/                    # Infrastructure as Code
-│   ├── eks/                      # EKS cluster setup
-│   │   ├── main.tf               # Cluster configuration
-│   │   ├── vpc.tf                # VPC and networking
-│   │   ├── node-groups.tf        # Worker nodes
-│   │   └── outputs.tf            # Cluster outputs
-│   ├── k8s-manifests/            # Kubernetes configurations
-│   │   ├── namespace.yaml        # Application namespace
-│   │   ├── deployment.yaml       # App deployment
-│   │   ├── service.yaml          # Load balancer service
-│   │   ├── configmap.yaml        # App configuration
-│   │   └── secret.yaml           # Database credentials
-│   ├── ec2.tf                    # EC2 configuration
-│   ├── rds.tf                    # Database setup
-│   ├── s3.tf                     # Storage bucket
-│   └── variables.tf              # Terraform variables
-├── DEPLOYMENT_GUIDE.md           # Comprehensive deployment guide
-└── README.md                     # This file
+📁 nodejs-eks-infrastructure/
+├── 📄 Documentation
+│   ├── README.md                    # This file
+│   ├── DEPLOYMENT_GUIDE.md          # Comprehensive deployment guide
+│   ├── KUBERNETES_INFRASTRUCTURE.md # K8s architecture details
+│   └── TERRAFORM_ARCHITECTURE.md    # Infrastructure documentation
+├── 🔧 scripts/                      # Deployment and management scripts
+│   ├── deploy-simple.sh             # Simple EC2+RDS deployment (~$17/month)
+│   ├── deploy-full-eks.sh           # Full EKS deployment (~$127/month)
+│   ├── destroy-all.sh               # Destroy all infrastructure
+│   ├── destroy-simple.sh            # Destroy simple setup
+│   ├── status.sh                    # Check resource status and costs
+│   └── quick-demo.sh                # Quick demo script
+├── 🏗️ terraform/                    # Infrastructure as Code
+│   ├── eks/                         # EKS cluster setup
+│   │   ├── main.tf                  # Cluster configuration
+│   │   ├── vpc.tf                   # VPC and networking
+│   │   ├── node-groups.tf           # Worker nodes
+│   │   └── outputs.tf               # Cluster outputs
+│   ├── k8s-manifests/               # Kubernetes configurations
+│   │   ├── namespace.yaml           # Application namespace
+│   │   ├── deployment.yaml          # App deployment
+│   │   ├── service.yaml             # Load balancer service
+│   │   ├── configmap.yaml           # App configuration
+│   │   └── secret.yaml              # Database credentials
+│   ├── ec2.tf                       # EC2 configuration
+│   ├── rds.tf                       # Database setup
+│   ├── s3.tf                        # Storage bucket
+│   └── variables.tf                 # Terraform variables
+└── 📱 app/ (submodule)              # Node.js application
+    ├── public/                      # Frontend files
+    ├── server.js                    # Node.js backend with CRUD APIs
+    ├── package.json                 # Dependencies
+    ├── Dockerfile                   # Container setup
+    └── .github/workflows/           # CI/CD pipeline
 ```
+
+### 🎯 **Quick Overview:**
+- **📄 Documentation**: Comprehensive guides and architecture details
+- **🔧 Scripts**: One-command deployment and management tools
+- **🏗️ Infrastructure**: Complete Terraform configuration for AWS
+- **📱 Application**: Node.js app with CI/CD pipeline (git submodule)
 
 ## What's in the App
 
