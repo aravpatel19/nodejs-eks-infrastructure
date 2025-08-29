@@ -10,7 +10,7 @@ All infrastructure has been destroyed to save money. Use the deployment scripts 
 
 ### **Option 1: Simple Setup (Recommended for Learning)**
 ```bash
-./deploy-simple.sh
+./scripts/deploy-simple.sh
 ```
 
 **What it deploys:**
@@ -24,7 +24,7 @@ All infrastructure has been destroyed to save money. Use the deployment scripts 
 
 ### **Option 2: Full EKS Setup (Enterprise-Grade)**
 ```bash
-./deploy-full-eks.sh
+./scripts/deploy-full-eks.sh
 ```
 
 **What it deploys:**
@@ -43,20 +43,20 @@ All infrastructure has been destroyed to save money. Use the deployment scripts 
 
 ### **Destroy Everything**
 ```bash
-./destroy-all.sh
+./scripts/destroy-all.sh
 ```
 Destroys all infrastructure and sets cost to $0.
 
 ### **Destroy Simple Setup Only**
 ```bash
-./destroy-simple.sh
+./scripts/destroy-simple.sh
 ```
 Destroys only the simple EC2+RDS setup.
 
 ## 📊 Check Status
 
 ```bash
-./status.sh
+./scripts/status.sh
 ```
 Shows current AWS resources and estimated costs.
 
@@ -80,13 +80,13 @@ Before running any deployment script:
 ## 🎯 Demo Scenarios
 
 ### **Quick Demo (5 minutes)**
-1. Run `./deploy-simple.sh`
+1. Run `./scripts/deploy-simple.sh`
 2. Wait for completion
 3. Access app via provided URL
-4. Run `./destroy-simple.sh` when done
+4. Run `./scripts/destroy-simple.sh` when done
 
 ### **Enterprise Demo (15 minutes)**
-1. Run `./deploy-full-eks.sh`
+1. Run `./scripts/deploy-full-eks.sh`
 2. Wait for EKS cluster to be ready
 3. Access app via load balancer URL
 4. Show Kubernetes features:
@@ -95,7 +95,7 @@ Before running any deployment script:
    kubectl get services -n nodejs-app
    kubectl scale deployment nodejs-app --replicas=3 -n nodejs-app
    ```
-5. Run `./destroy-all.sh` when done
+5. Run `./scripts/destroy-all.sh` when done
 
 ## 💰 Cost Management
 

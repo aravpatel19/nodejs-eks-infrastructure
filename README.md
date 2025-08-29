@@ -27,6 +27,13 @@ I built a comprehensive user management app with Node.js and MySQL, then deploye
 │   ├── package.json              # Dependencies
 │   ├── Dockerfile                # Container setup
 │   └── .github/workflows/        # CI/CD pipeline
+├── scripts/                      # Deployment and management scripts
+│   ├── deploy-simple.sh          # Simple EC2+RDS deployment
+│   ├── deploy-full-eks.sh        # Full EKS deployment
+│   ├── destroy-all.sh            # Destroy all infrastructure
+│   ├── destroy-simple.sh         # Destroy simple setup
+│   ├── status.sh                 # Check resource status
+│   └── quick-demo.sh             # Quick demo script
 ├── terraform/                    # Infrastructure as Code
 │   ├── eks/                      # EKS cluster setup
 │   │   ├── main.tf               # Cluster configuration
@@ -43,7 +50,7 @@ I built a comprehensive user management app with Node.js and MySQL, then deploye
 │   ├── rds.tf                    # Database setup
 │   ├── s3.tf                     # Storage bucket
 │   └── variables.tf              # Terraform variables
-├── auto-port-forward.sh          # Auto-restart port-forward script
+├── DEPLOYMENT_GUIDE.md           # Comprehensive deployment guide
 └── README.md                     # This file
 ```
 
@@ -152,7 +159,7 @@ I've created scripts to make deployment super easy! Choose your preferred setup:
 
 ### **Option 1: Full EKS Setup (Enterprise-Grade)**
 ```bash
-./deploy-full-eks.sh
+./scripts/deploy-full-eks.sh
 ```
 - **Cost**: ~$127/month
 - **Time**: 10-15 minutes
@@ -161,7 +168,7 @@ I've created scripts to make deployment super easy! Choose your preferred setup:
 
 ### **Option 2: Simple Setup (Cost-Effective)**
 ```bash
-./deploy-simple.sh
+./scripts/deploy-simple.sh
 ```
 - **Cost**: ~$17/month
 - **Time**: 3-5 minutes
@@ -170,8 +177,8 @@ I've created scripts to make deployment super easy! Choose your preferred setup:
 
 ### **Destroy Everything (Save Money)**
 ```bash
-./destroy-all.sh        # Destroys everything
-./destroy-simple.sh     # Destroys only simple setup
+./scripts/destroy-all.sh        # Destroys everything
+./scripts/destroy-simple.sh     # Destroys only simple setup
 ```
 
 ### **Manual Deployment (Advanced Users):**
