@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-config
+  namespace: nodejs-app
+data:
+  DB_NAME: "arav_demo"
+  TABLE_NAME: "users"
+  PORT: "3000"
