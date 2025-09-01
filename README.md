@@ -6,7 +6,7 @@ I built a comprehensive user management app with Node.js and MySQL, then deploye
 
 1. **Local Docker** (`localhost:3000`) - For local development with local MySQL
 2. **EKS Port-Forward** (`localhost:8080`) - Local access to cloud deployment
-3. **Public URL** - `http://af2297c2cfb804d858ad1ac92e392174-1808336492.us-east-1.elb.amazonaws.com` (Deprecated for cost purposes)
+3. **Public URL** - `http://af2297c2cfb804d858ad1ac92e392174-1808336492.us-east-1.elb.amazonaws.com` (Deprecated due to cost purposes)
 
 ### ✨ **Key Features:**
 
