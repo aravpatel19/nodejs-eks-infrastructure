@@ -13,6 +13,7 @@ resource "aws_instance" "tf_ec2_instance" {
   key_name                    = "terraform-ec2"
 
   vpc_security_group_ids = [module.tf_module_ec2_sg.security_group_id]
+  subnet_id              = aws_subnet.public.id
 
   depends_on = [aws_s3_object.tf_s3_object]
 
@@ -114,7 +115,7 @@ resource "aws_instance" "tf_ec2_instance" {
 module "tf_module_ec2_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "5.3.0"
-  vpc_id = var.vpc_id
+  vpc_id = aws_vpc.main.id
   name   = "tf_module_ec2_sg"
 
   ingress_with_cidr_blocks = [

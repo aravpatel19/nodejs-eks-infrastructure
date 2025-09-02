@@ -11,6 +11,16 @@
 
 # rds resource
 
+# DB Subnet Group
+resource "aws_db_subnet_group" "main" {
+  name       = "nodejs-app-db-subnet-group"
+  subnet_ids = [aws_subnet.public.id]
+
+  tags = {
+    Name = "nodejs-app-db-subnet-group"
+  }
+}
+
 resource "aws_db_instance" "tf_rds_instance" {
   allocated_storage      = 10
   db_name                = "arav_demo"
@@ -24,11 +34,12 @@ resource "aws_db_instance" "tf_rds_instance" {
   skip_final_snapshot    = true
   publicly_accessible    = true
   vpc_security_group_ids = [aws_security_group.tf_rds_sg.id]
+  db_subnet_group_name   = aws_db_subnet_group.main.name
 }
 
 resource "aws_security_group" "tf_rds_sg" {
   name        = "allow_mysql"
-  vpc_id      = var.vpc_id
+  vpc_id      = aws_vpc.main.id
   description = "Allow MySQL traffic"
 
   ingress {

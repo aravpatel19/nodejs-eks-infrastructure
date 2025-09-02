@@ -11,7 +11,7 @@ if [ "$confirm" != "yes" ]; then
     exit 1
 fi
 
-echo "🗑️  Destroying EC2 + RDS + S3..."
+echo "🗑️  Destroying EC2 + RDS + S3 + VPC..."
 cd terraform
 terraform destroy -auto-approve
 

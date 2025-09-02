@@ -186,8 +186,9 @@ I've created scripts to make deployment super easy! Choose your preferred setup:
 
 ### **Destroy Everything (Save Money)**
 ```bash
-./scripts/destroy-all.sh        # Destroys everything
-./scripts/destroy-simple.sh     # Destroys only simple setup
+./scripts/destroy-all.sh                    # Destroys everything
+./scripts/destroy-simple.sh                 # Destroys only simple setup
+./scripts/cleanup-orphaned-resources.sh     # Clean up orphaned resources
 ```
 
 ### **Manual Deployment (Advanced Users):**
@@ -315,6 +316,7 @@ I've optimized the project for different use cases:
 ### **Current Status: $0/month** ✅
 - All infrastructure destroyed to save money
 - Use deployment scripts to bring back what you need
+- **NEW**: Comprehensive cleanup script to remove orphaned resources
 
 ### **Cost Breakdown:**
 
@@ -336,6 +338,7 @@ I've optimized the project for different use cases:
 - **Destroy when not needed** - scripts make it easy to recreate
 - **EKS is expensive** - only use for enterprise demos
 - **Both setups use t2.micro** - consistent and cost-effective
+- **Run cleanup script** if you're still being charged after destroying
 
 ## 🎯 Professional Features Implemented
 

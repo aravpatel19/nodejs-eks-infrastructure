@@ -13,7 +13,3 @@ variable "app_name" {
   type    = string
   default = "Nodejs-server"
 }
-
-variable "vpc_id" {
-  default = "vpc-075b52eb2d5f7da61"
-}
